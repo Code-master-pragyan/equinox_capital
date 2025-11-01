@@ -9,6 +9,9 @@ function Login() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+    const DASHBOARD_URL = process.env.DASHBOARD_URL || 'http://localhost:5174';
+
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     const validateInputs = () => {
@@ -30,7 +33,7 @@ function Login() {
         if (!validateInputs()) return;
 
         try {
-            const res = await axios.post("http://localhost:3002/auth/login", {
+            const res = await axios.post(`${API_URL}/auth/login`, {
                 email: email.toLowerCase().trim(),
                 password,
             }, { withCredentials: true });
@@ -50,7 +53,7 @@ function Login() {
 
             // ✅ SOLUTION: Pass token via URL to dashboard
             setTimeout(() => {
-                window.location.href = `http://localhost:5174?token=${encodeURIComponent(token)}`;
+                window.location.href = `${DASHBOARD_URL}?token=${encodeURIComponent(token)}`;
             }, 1000);
         } catch (err) {
             // use err.response (axios) and guard access to avoid throwing inside catch

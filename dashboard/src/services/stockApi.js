@@ -1,6 +1,6 @@
 // Stock Market API Service - Hybrid: Finnhub (US) + Yahoo Finance (Indian)
 
-const BACKEND_URL = 'http://localhost:3002';
+const BACKEND_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
 
 // Indian stocks configuration
 const INDIAN_STOCKS = {

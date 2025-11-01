@@ -16,6 +16,10 @@ const BuyActionWindow = ({ uid }) => {
   // ✅ FIX: Use useContext to access the context
   const { closeBuyWindow } = useContext(GeneralContext);
 
+
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+  const FRONTEND_URL = import.meta.env.VITE_FRONTEND_URL || 'http://localhost:5173';
+
   // Fetch current market price
   useEffect(() => {
     const fetchPrice = async () => {
@@ -92,13 +96,13 @@ const BuyActionWindow = ({ uid }) => {
 
       if (!token) {
         alert("Please login first");
-        window.location.href = "http://localhost:5173/login";
+        window.location.href = `${FRONTEND_URL}/login`;
         return;
       }
 
       // Send buy request with auth token
       const response = await axios.post(
-        "http://localhost:3002/holdings/buystock",
+        `${API_URL}/holdings/buystock`,
         {
           name: uid,
           qty: stockQuantity,

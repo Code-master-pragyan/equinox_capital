@@ -4,6 +4,9 @@ const AuthWrapper = ({ children }) => {
   const [isChecking, setIsChecking] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+  const FRONTEND_URL = import.meta.env.VITE_FRONTEND_URL || 'http://localhost:5173';
+
   useEffect(() => {
     console.log("[AuthWrapper] Starting authentication check...");
 
@@ -17,7 +20,7 @@ const AuthWrapper = ({ children }) => {
     if (urlToken) {
       console.log("[AuthWrapper] Token received via URL");
       localStorage.setItem("token", urlToken);
-      
+
       // Clean URL (remove token parameter)
       window.history.replaceState({}, document.title, window.location.pathname);
     } else {
@@ -28,12 +31,12 @@ const AuthWrapper = ({ children }) => {
 
     if (!token) {
       console.log("[AuthWrapper] No token found, redirecting to signup...");
-      window.location.href = "http://localhost:5173/signup";
+      window.location.href = `${FRONTEND_URL}/signup`;
       return;
     }
 
     // ✅ Verify token with backend
-    fetch("http://localhost:3002/auth/verify-token", {
+    fetch(`${API_URL}/auth/verify-token`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -54,13 +57,13 @@ const AuthWrapper = ({ children }) => {
       .then((data) => {
         if (data.valid) {
           console.log("[AuthWrapper] ✅ Token valid. Access granted.");
-          
+
           // Store user info
           if (data.user) {
             localStorage.setItem("userName", data.user.name);
             localStorage.setItem("userEmail", data.user.email);
           }
-          
+
           setIsAuthenticated(true);
         } else {
           console.log("[AuthWrapper] ❌ Token invalid");
@@ -72,9 +75,9 @@ const AuthWrapper = ({ children }) => {
         localStorage.removeItem("token");
         localStorage.removeItem("userName");
         localStorage.removeItem("userEmail");
-        
+
         setTimeout(() => {
-          window.location.href = "http://localhost:5173/signup";
+          window.location.href = `${FRONTEND_URL}/signup`;
         }, 1000);
       })
       .finally(() => {

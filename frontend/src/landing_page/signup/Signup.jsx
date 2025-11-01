@@ -12,6 +12,9 @@ function Signup() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+    const DASHBOARD_URL = process.env.DASHBOARD_URL || 'http://localhost:5174';
+
     // Validation regex
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
@@ -39,7 +42,7 @@ function Signup() {
     const handleSignup = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:3002/auth/register", {
+            const res = await axios.post(`${API_URL}/auth/register`, {
                 name: name.trim(),
                 email: email.toLowerCase().trim(),
                 password,
@@ -58,7 +61,7 @@ function Signup() {
 
             // ✅ SOLUTION: Pass token via URL to dashboard
             setTimeout(() => {
-                window.location.href = `http://localhost:5174?token=${encodeURIComponent(token)}`;
+                window.location.href = `${DASHBOARD_URL}?token=${encodeURIComponent(token)}`;
             }, 1000);
         } catch (err) {
             console.error(err.response.data);

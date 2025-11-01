@@ -16,6 +16,9 @@ const SellActionWindow = ({ uid }) => {
 
     const { closeSellWindow } = useContext(GeneralContext);
 
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+    const FRONTEND_URL = import.meta.env.VITE_FRONTEND_URL || 'http://localhost:5173';
+
     // Fetch current market price
     useEffect(() => {
         const fetchPrice = async () => {
@@ -92,13 +95,13 @@ const SellActionWindow = ({ uid }) => {
             const token = localStorage.getItem("token");
             if (!token) {
                 alert("Please login first");
-                window.location.href = "http://localhost:5173/login";
+                window.location.href = `${FRONTEND_URL}/login`;
                 return;
             }
 
             // API call to sell stock
             const response = await axios.post(
-                "http://localhost:3002/holdings/sellstock",
+                `${API_URL}/holdings/sellstock`,
                 {
                     name: uid,
                     qty: stockQuantity,

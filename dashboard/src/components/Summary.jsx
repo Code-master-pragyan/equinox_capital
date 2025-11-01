@@ -13,12 +13,15 @@ const Summary = () => {
   });
   const [isLoading, setIsLoading] = useState(true);
 
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+  const FRONTEND_URL = import.meta.env.VITE_FRONTEND_URL || 'http://localhost:5173';
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     const storedName = localStorage.getItem("userName");
 
     if (!token) {
-      window.location.href = "http://localhost:5173/login";
+      window.location.href = `${FRONTEND_URL}/login`;
       return;
     }
 
@@ -28,7 +31,7 @@ const Summary = () => {
     const fetchSummary = async () => {
       try {
         // Fetch holdings (same as Holdings page does)
-        const response = await axios.get("http://localhost:3002/holdings/allholdings", {
+        const response = await axios.get(`${API_URL}/holdings/allholdings`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const holdings = response.data;
