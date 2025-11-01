@@ -10,7 +10,7 @@ function Login() {
     const [error, setError] = useState("");
 
     const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
-    const DASHBOARD_URL = process.env.DASHBOARD_URL || 'http://localhost:5174';
+    const DASHBOARD_URL = import.meta.env.VITE_DASHBOARD_URL || 'http://localhost:5174';
 
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
