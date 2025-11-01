@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Charges.css"; // Import CSS file
+import "./charges.css"; // Import CSS file
 
 function Charges() {
     const [activeTab, setActiveTab] = useState("equities");
