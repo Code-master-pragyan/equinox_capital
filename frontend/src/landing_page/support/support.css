@@ -1,0 +1,132 @@
+.custom-search-input {
+    width: 100%;
+    padding: 18px !important; 
+    border: 1px solid #ccc;
+    font-size: 1.1rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+#search-icon {
+    padding: 0 15px ;
+}
+
+.ticket-btn {
+    background-color: #387ed1;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;;
+}
+
+.custom-search-input:focus {
+    box-shadow: none !important;
+    border-color: #ccc !important; /* Optional: keep border color consistent */
+    outline: none !important;
+}
+
+
+
+.support-container {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  min-height: 90vh;
+}
+
+/* ===== LEFT SIDEBAR ===== */
+.sidebar {
+  border-right: 1px solid #eee;
+}
+
+.accordion-item {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.accordion-header {
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.accordion-header:hover {
+  background: #f8faff;
+}
+
+.icon {
+  color: #387ed1;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.accordion-content {
+  padding: 10px 20px;
+  border-top: 1px solid #eee;
+}
+
+.topic {
+  padding: 6px 0;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.topic:hover {
+  color: #387ed1;
+}
+
+.topic.active {
+  color: #387ed1;
+  font-weight: 500;
+}
+
+/* ===== RIGHT CONTENT ===== */
+.content-area {
+  padding: 15px 30px;
+}
+
+.topic-title {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.faq-list {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+.faq-item {
+  color: #387ed1;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.placeholder-text {
+  color: #888;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* ===== ARROW ANIMATION & HEADER ALIGNMENT ===== */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-arrow {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+  color: #387ed1;
+}
+
+/* Optional: add smooth rotation */
+.rotate {
+  transform: rotate(90deg);
+}

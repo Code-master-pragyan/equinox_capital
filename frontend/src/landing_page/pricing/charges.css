@@ -1,0 +1,249 @@
+.charges-sections {
+    padding: 40px 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* .container {
+  max-width: 1000px;
+  margin: 0 auto;
+} */
+
+.table-container {
+    overflow-x: auto;
+}
+
+.grey-back {
+    background: #f9f9f9;
+}
+
+ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.free-tag {
+    background: #28a745;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.brokerage-link a {
+    color: #387ed1;
+    text-decoration: underline;
+}
+
+/* =============================
+   EQUITY CHARGES TABLE STYLES
+   ============================= */
+
+#charges-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    overflow: hidden;
+    font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+}
+
+/* ===== Table Head ===== */
+#charges-table thead th {
+    background-color: #fafafa;
+    color: #444;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+
+/* ===== Table Body ===== */
+#charges-table tbody td {
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #333;
+    vertical-align: top;
+}
+
+#charges-table tbody tr.grey-back {
+    background-color: #fafafa;
+}
+
+#charges-table .charges-heads {
+    font-weight: 600;
+    color: #222;
+    width: 180px;
+    white-space: nowrap;
+}
+
+/* ===== List inside table ===== */
+#charges-table .list-items {
+    list-style-type: disc;
+    margin-left: 18px;
+    margin-top: 4px;
+}
+
+#charges-table .list-items li {
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+
+/* ===== Column borders ===== */
+#charges-table th,
+#charges-table td {
+    border: none;
+    text-align: left;
+    vertical-align: middle !important;
+}
+
+/* #charges-table th:last-child,
+#charges-table td:last-child {
+  border-right: none;
+} */
+
+
+
+/* =============================
+   TABS NAVIGATION STYLING
+   ============================= */
+
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+}
+
+.tab {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #222;
+    cursor: pointer;
+    padding: 10px 10px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+
+.tab:hover {
+    color: #387ed1;
+}
+
+.tab.active {
+    color: #387ed1;
+}
+
+.tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #387ed1;
+}
+
+@media (max-width: 768px) {
+    .tabs {
+        gap: 1.2rem;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .tab {
+        font-size: 16px;
+    }
+}
+
+
+/* ===== Responsive Table ===== */
+@media (max-width: 768px) {
+    #charges-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-radius: 6px;
+    }
+
+    #charges-table thead th {
+        font-size: 13px;
+    }
+
+    #charges-table tbody td {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    #charges-table .hide-on-mobile {
+        display: none;
+    }
+}
+
+
+/* charges explained CSS*/
+
+.left-content .charges-heading {
+    font-size: 1rem;
+    margin: 1.5rem 0 0 0;
+    color: #2f2f2f;
+    letter-spacing: 0.6px;
+}
+
+.left-content p {
+    font-size: 0.75rem;
+    margin: 1.2rem 0;
+    color: #000000a4;
+    letter-spacing: 0.5px;
+    width: 95%;
+}
+
+.left-content ul {
+    margin: 1rem 0;
+}
+
+.left-content ul li {
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    color: #000000a4;
+    letter-spacing: 0.6px;
+}
+
+.right-content .charges-heading {
+    font-size: 1rem;
+    margin: 1.5rem 0 0 0;
+    color: #2f2f2f;
+    letter-spacing: 0.6px;
+}
+
+.right-content p {
+    font-size: 0.75rem;
+    margin: 1rem 0;
+    color: #000000a4;
+    letter-spacing: 0.6px;
+    width: 95%;
+}
+
+.right-content ul {
+    margin: 1rem 0;
+}
+
+.right-content ul li {
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    color: #000000a4;
+    letter-spacing: 0.6px;
+}

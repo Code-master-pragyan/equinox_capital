@@ -1,0 +1,86 @@
+.spaced-list li {
+    margin-bottom: 8px;
+}
+
+.stat-heading {
+    font-size: 1.6rem;
+    margin-bottom: 0;
+    color: rgb(43, 43, 43);
+}
+
+.stat-record {
+    font-size: 1.1rem;
+    color: gray;
+    width: 80%;
+}
+
+.nav-item .nav-link {
+    color: black;
+    margin-right: 2.5rem;
+    font-size: 1rem;
+    padding: 8px;
+}
+
+.nav-item .nav-link:hover {
+    transform: translateY(-3px);
+    color: blue;
+}
+
+
+.company-foot {
+    display: flex;
+    flex-direction: column;
+}
+.company-foot a {
+    text-decoration: none;
+    color: #666666;
+    font-weight: 400;
+    margin-bottom: .8rem;
+    font-size: 0.875rem;
+}
+
+.support-foot {
+    display: flex;
+    flex-direction: column;
+}
+.support-foot a {
+    text-decoration: none;
+    color: #666666;
+    font-weight: 400;
+    margin-bottom: .8rem;
+    font-size: 0.875rem;
+}
+
+.account-foot {
+    display: flex;
+    flex-direction: column;
+}
+.account-foot a {
+    text-decoration: none;
+    color: #666666;
+    font-weight: 400;
+    margin-bottom: .8rem;
+    font-size: 0.875rem;
+}
+
+.footer-text p {
+    font-size: 0.65rem;
+    color: rgba(128, 128, 128, 0.793);
+    margin-top: 0;
+    width: 100%;
+    line-height: 1.8;
+}
+
+.rights .social {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    margin: 15px 0 0;
+}
+
+.rights .social li a {
+    color: #424242ce;
+    margin-bottom: 10px;
+    margin-right: 13px;
+    font-size: .925rem;
+}
